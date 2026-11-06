@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Testy
+.pytest_cache/
+
+# Dane poufne
+.env
+.env.*
+!.env.example
