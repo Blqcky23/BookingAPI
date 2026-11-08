@@ -2,7 +2,21 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import sqlite3
 from pathlib import Path
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 app = FastAPI()
+app.mount(
+    "/static",
+    StaticFiles(directory="frontend"),
+    name="static"
+)
+
+
+@app.get("/")
+def home():
+    return FileResponse("frontend/index.html")
+
 
 DB_PATH = Path(__file__).resolve().parent / "booking.db"
 class ReservationCreate(BaseModel):
