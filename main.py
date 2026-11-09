@@ -23,10 +23,6 @@ class ReservationCreate(BaseModel):
     user_id: int
     seat_id: int
 
-@app.get("/")
-def home():
-    return {"message": "Witaj w Booking API!"}
-
 
 @app.get("/events")
 def get_events():
