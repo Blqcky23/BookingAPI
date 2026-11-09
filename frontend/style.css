@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    color: black;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-top: 35px;
+    font-size: 22px;
+}
+
+#events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#events button {
+    background: cornflowerblue;
+    color: blue;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#events button:hover {
+    background: blue;
+    border-color: darkblue;
+    color: darkblue;
+}
+
+#seats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#seats button {
+    background: lightgreen;
+    color: green;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 18px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#seats button:hover:not(:disabled) {
+    background: green;
+    transform: translateY(-2px);
+    color: darkgreen;
+}
+
+#seats button:disabled {
+    background: indianred;
+    color: darkred;
+    border-color: darkred;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+button:focus-visible {
+    outline: 3px solid deepskyblue;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    #events button {
+        width: 100%;
+    }
+}
